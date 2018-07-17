@@ -1,0 +1,182 @@
+/* Default State */
+#leap-motion-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.25s ease;
+  border: 2px solid rgba(255, 255, 255, 0);
+  -webkit-animation-fill-mode: forwards;
+}
+#leap-motion-indicator:after {
+  transition: all 0.25s ease;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* LEAP_MOTION_HAND_MISSING */
+#leap-motion-indicator.leap_motion_hand_missing {
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0);
+}
+#leap-motion-indicator.leap_motion_hand_missing:after {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* LEAP_MOTION_HAND_DETECTED */
+#leap-motion-indicator.leap_motion_hand_detected {
+  background-color: rgba(255, 255, 255, 1);
+}
+#leap-motion-indicator.leap_motion_hand_detected:after {
+  content: ' ';
+  position: absolute;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  animation: ripple 1s ease infinite;
+}
+
+
+/* LEAP_MOTION_HAND_DETECTED */
+
+#leap-motion-indicator.leap_motion_hand_detected {}
+#leap-motion-indicator.leap_motion_hand_missing {}
+#leap-motion-indicator.leap_motion_swipe_up {
+  animation: swipeUp 0.35s ease-in;
+}
+#leap-motion-indicator.leap_motion_swipe_down {
+  animation: swipeDown 0.35s ease-in;
+}
+#leap-motion-indicator.leap_motion_swipe_left {
+  animation: swipeLeft 0.35s ease-in;
+}
+#leap-motion-indicator.leap_motion_swipe_right {
+  animation: swipeRight 0.35s ease-in;
+}
+#leap-motion-indicator.leap_motion_swipe_forward {
+  animation: swipeForward 0.35s ease-in;
+}
+#leap-motion-indicator.leap_motion_swipe_back {
+  animation: swipeBack 0.35s ease-in;
+}
+#leap-motion-indicator.leap_motion_gesture_clockwise {
+  border: 2px solid #FFF;
+  border-top-color: #000;
+  animation: spin 1s ease;
+}
+#leap-motion-indicator.leap_motion_gesture_counter_clockwise {
+  border: 2px solid #FFF;
+  border-top-color: #000;
+  animation: spin 1s ease;
+  animation-direction: reverse;
+}
+
+@keyframes ripple {
+   0% {
+    left: 5px;
+    top: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 0;
+    height: 0;
+  }
+  100% {
+    left: -20px;
+    top: -20px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes swipeLeft {
+   0% {
+    transform: translate(0, 0);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    transform: translate(-50px, 0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes swipeRight {
+   0% {
+    transform: translate(0, 0);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    transform: translate(50px, 0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes swipeUp {
+   0% {
+    transform: translate(0, 0);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    transform: translate(0, -50px);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes swipeDown {
+   0% {
+    transform: translate(0, 0);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    transform: translate(0, 50px);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes swipeForward {
+   0% {
+    transform: scale(1, 1);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    transform: scale(0, 0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes swipeBack {
+   0% {
+    transform: scale(1, 1);
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    transform: scale(2, 2);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

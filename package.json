@@ -1,0 +1,29 @@
+{
+  "name": "MMM-Leap-Motion",
+  "version": "1.0.0",
+  "description": "Add Leap Motion support to Magic Mirror",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifestinteractive/MMM-Leap-Motion.git"
+  },
+  "keywords": [
+    "magicmirror2",
+    "module",
+    "leap-motion",
+    "gesture-control"
+  ],
+  "author": "Peter Schmalfeldt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manifestinteractive/MMM-Leap-Motion/issues"
+  },
+  "homepage": "https://github.com/manifestinteractive/MMM-Leap-Motion#readme",
+  "dependencies": {
+    "cylon": "^1.3.0",
+    "cylon-leapmotion": "^0.21.0"
+  }
+}
