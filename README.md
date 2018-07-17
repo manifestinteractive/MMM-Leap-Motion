@@ -4,7 +4,7 @@ This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror
 
 Add [Leap Motion](https://www.leapmotion.com) support to Magic Mirror.
 
-![screenshot](https://peter.build/magic-mirror/mmm-nest-leap-motion.gif)
+![screenshot](https://peter.build/magic-mirror/mmm-nest-leap-motion.gif?v=1.0.0)
 
 **IMPORTANT: This ONLY works with the Native Leap Motion App**
 
