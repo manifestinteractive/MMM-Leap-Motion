@@ -4,7 +4,8 @@
   "description": "Add Leap Motion support to Magic Mirror",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 1"
+    "test": "echo \"No test specified\" && exit 1",
+    "postinstall": "npm rebuild --runtime=electron --target=2.0.2"
   },
   "repository": {
     "type": "git",
