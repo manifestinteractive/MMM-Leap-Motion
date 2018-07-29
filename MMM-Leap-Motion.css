@@ -1,4 +1,5 @@
 /* Default State */
+
 #leap-motion-indicator {
   width: 10px;
   height: 10px;
@@ -10,24 +11,29 @@
   border: 2px solid rgba(255, 255, 255, 0);
   -webkit-animation-fill-mode: forwards;
 }
+
 #leap-motion-indicator:after {
   transition: all 0.25s ease;
   background-color: rgba(255, 255, 255, 0);
 }
 
 /* LEAP_MOTION_HAND_MISSING */
+
 #leap-motion-indicator.leap_motion_hand_missing {
   border: 2px solid rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0);
 }
+
 #leap-motion-indicator.leap_motion_hand_missing:after {
   background-color: rgba(255, 255, 255, 0);
 }
 
 /* LEAP_MOTION_HAND_DETECTED */
+
 #leap-motion-indicator.leap_motion_hand_detected {
   background-color: rgba(255, 255, 255, 1);
 }
+
 #leap-motion-indicator.leap_motion_hand_detected:after {
   content: ' ';
   position: absolute;
@@ -39,32 +45,38 @@
   animation: ripple 1s ease infinite;
 }
 
-
 /* LEAP_MOTION_HAND_DETECTED */
 
 #leap-motion-indicator.leap_motion_hand_detected {}
+
 #leap-motion-indicator.leap_motion_hand_missing {}
+
 #leap-motion-indicator.leap_motion_swipe_up {
   animation: swipeUp 0.35s ease-in;
 }
+
 #leap-motion-indicator.leap_motion_swipe_down {
   animation: swipeDown 0.35s ease-in;
 }
+
 #leap-motion-indicator.leap_motion_swipe_left {
   animation: swipeLeft 0.35s ease-in;
 }
+
 #leap-motion-indicator.leap_motion_swipe_right {
   animation: swipeRight 0.35s ease-in;
 }
+
 #leap-motion-indicator.leap_motion_swipe_forward {
   animation: swipeForward 0.35s ease-in;
 }
+
 #leap-motion-indicator.leap_motion_swipe_back {
   animation: swipeBack 0.35s ease-in;
 }
 
 @keyframes ripple {
-   0% {
+  0% {
     left: 5px;
     top: 5px;
     background-color: rgba(255, 255, 255, 0.75);
@@ -81,7 +93,7 @@
 }
 
 @keyframes swipeLeft {
-   0% {
+  0% {
     transform: translate(0, 0);
     background-color: rgba(255, 255, 255, 1);
   }
@@ -95,7 +107,7 @@
 }
 
 @keyframes swipeRight {
-   0% {
+  0% {
     transform: translate(0, 0);
     background-color: rgba(255, 255, 255, 1);
   }
@@ -109,7 +121,7 @@
 }
 
 @keyframes swipeUp {
-   0% {
+  0% {
     transform: translate(0, 0);
     background-color: rgba(255, 255, 255, 1);
   }
@@ -123,7 +135,7 @@
 }
 
 @keyframes swipeDown {
-   0% {
+  0% {
     transform: translate(0, 0);
     background-color: rgba(255, 255, 255, 1);
   }
@@ -137,7 +149,7 @@
 }
 
 @keyframes swipeForward {
-   0% {
+  0% {
     transform: scale(1, 1);
     background-color: rgba(255, 255, 255, 1);
   }
@@ -151,7 +163,7 @@
 }
 
 @keyframes swipeBack {
-   0% {
+  0% {
     transform: scale(1, 1);
     background-color: rgba(255, 255, 255, 1);
   }

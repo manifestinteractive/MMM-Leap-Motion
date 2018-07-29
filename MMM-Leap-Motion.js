@@ -17,8 +17,6 @@ Module.register('MMM-Leap-Motion', {
     watchGestureRight: true,
     watchGestureForward: true,
     watchGestureBack: true,
-    watchGestureClockwise: true,
-    watchGestureCounterClockwise: true,
     orientation: 'up'
   },
 
@@ -28,7 +26,7 @@ Module.register('MMM-Leap-Motion', {
 
   gesture: 'LEAP_MOTION_HAND_MISSING',
 
-  start: function () {
+  start: function() {
     this.sendSocketNotification('LEAP_MOTION_INIT', this.config);
   },
 
@@ -36,20 +34,20 @@ Module.register('MMM-Leap-Motion', {
     return ['MMM-Leap-Motion.css'];
   },
 
-	getDom: function() {
+  getDom: function() {
     var wrapper = document.createElement('div');
 
     wrapper.id = 'leap-motion-indicator';
     wrapper.className = this.gesture.toLowerCase();
 
     return wrapper;
-	},
+  },
 
-  updateStatus: function () {
+  updateStatus: function() {
     document.getElementById('leap-motion-indicator').className = this.gesture.toLowerCase();
   },
 
-  socketNotificationReceived: function (notification, payload) {
+  socketNotificationReceived: function(notification, payload) {
     var self = this;
     var timer = null;
 
@@ -60,7 +58,7 @@ Module.register('MMM-Leap-Motion', {
       this.updateStatus();
 
       clearTimeout(timer);
-      timer = setTimeout(function(){
+      timer = setTimeout(function() {
         self.sendNotification('LEAP_MOTION_HAND_MISSING');
         self.lastGesture = self.gesture;
         self.gesture = 'LEAP_MOTION_HAND_MISSING';
