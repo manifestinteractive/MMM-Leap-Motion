@@ -24,7 +24,7 @@ Module.register('MMM-Leap-Motion', {
 
   currentPage: 0,
 
-  lastGesture: '',
+  lastGesture: 'LEAP_MOTION_HAND_MISSING',
 
   gesture: 'LEAP_MOTION_HAND_MISSING',
 
@@ -50,11 +50,22 @@ Module.register('MMM-Leap-Motion', {
   },
 
   socketNotificationReceived: function (notification, payload) {
+    var self = this;
+    var timer = null;
+
     if (notification === 'LEAP_MOTION_GESTURE' && typeof payload === 'string' && payload !== this.lastGesture) {
       this.sendNotification(payload);
       this.lastGesture = this.gesture;
       this.gesture = payload;
       this.updateStatus();
+
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        self.sendNotification('LEAP_MOTION_HAND_MISSING');
+        self.lastGesture = self.gesture;
+        self.gesture = 'LEAP_MOTION_HAND_MISSING';
+        self.updateStatus();
+      }, 1000)
     }
   }
 });
