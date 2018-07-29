@@ -15,7 +15,6 @@ You will not be able to use this with the Raspberry Pi, or any other hardware th
 - [X] Visual Indicator when your hand is detected, letting you know you can make a gesture
 - [X] Visual Representation of Gestures on Screen
 - [X] Supports Swipe Gestures:  Up, Down, Left, Right, Forward & Back
-- [X] Supports Circle Gestures:  Clockwise, Counter Clockwise
 - [X] Ability to limit which gestures you want to watch for
 
 ## Installation
@@ -46,8 +45,6 @@ var config = {
         watchGestureRight: true,
         watchGestureForward: true,
         watchGestureBack: true,
-        watchGestureClockwise: true,
-        watchGestureCounterClockwise: true,
         orientation: 'up'
       }
     }
@@ -69,32 +66,28 @@ notificationReceived: function(notification) {
 
 Here are all the notifications this module will send:
 
-Notification                            | Description
-----------------------------------------|----------------------------------------------------------------
-`LEAP_MOTION_HAND_DETECTED`             | When a hand is detected, letting you know you can make a gesture
-`LEAP_MOTION_HAND_MISSING`              | Hand is no longer detected, no gestures will work
-`LEAP_MOTION_SWIPE_UP`                  | Swipe Up Detected
-`LEAP_MOTION_SWIPE_DOWN`                | Swipe Down Detected
-`LEAP_MOTION_SWIPE_LEFT`                | Swipe Left Detected
-`LEAP_MOTION_SWIPE_RIGHT`               | Swipe Right Detected
-`LEAP_MOTION_SWIPE_FORWARD`             | Swipe Forward Detected
-`LEAP_MOTION_SWIPE_BACK`                | Swipe Back Detected
-`LEAP_MOTION_GESTURE_CLOCKWISE`         | Palm of Hand made Clockwise Rotation
-`LEAP_MOTION_GESTURE_COUNTER_CLOCKWISE` | Palm of Hand made Counter Clockwise Rotation
+Notification                | Description
+----------------------------|----------------------------------------------------------------
+`LEAP_MOTION_HAND_DETECTED` | When a hand is detected, letting you know you can make a gesture
+`LEAP_MOTION_HAND_MISSING`  | Hand is no longer detected, no gestures will work
+`LEAP_MOTION_SWIPE_UP`      | Swipe Up Detected
+`LEAP_MOTION_SWIPE_DOWN`    | Swipe Down Detected
+`LEAP_MOTION_SWIPE_LEFT`    | Swipe Left Detected
+`LEAP_MOTION_SWIPE_RIGHT`   | Swipe Right Detected
+`LEAP_MOTION_SWIPE_FORWARD` | Swipe Forward Detected
+`LEAP_MOTION_SWIPE_BACK`    | Swipe Back Detected
 
 ## Configuration options
 
-Option                         | Type      | Default | Description
--------------------------------|-----------|---------|--------------------------------------------------------------
-`watchGestureUp`               | `boolean` | `true`  | Watch Swipe Up Gestures
-`watchGestureDown`             | `boolean` | `true`  | Watch Swipe Down Gestures
-`watchGestureLeft`             | `boolean` | `true`  | Watch Swipe Left Gestures
-`watchGestureRight`            | `boolean` | `true`  | Watch Swipe Right Gestures
-`watchGestureForward`          | `boolean` | `true`  | Watch Swipe Forward Gestures
-`watchGestureBack`             | `boolean` | `true`  | Watch Swipe Back Gestures
-`watchGestureClockwise`        | `boolean` | `true`  | Watch Swipe Clockwise Gestures
-`watchGestureCounterClockwise` | `boolean` | `true`  | Watch Swipe Counter Clockwise Gestures
-`orientation`                  | `string`  | `up`    | Orientation of Leap Motion Controller: `up` = glass facing ceiling, `forward` = glass facing wall
+Option                | Type      | Default | Description
+----------------------|-----------|---------|--------------------------------------------------------------
+`watchGestureUp`      | `boolean` | `true`  | Watch Swipe Up Gestures
+`watchGestureDown`    | `boolean` | `true`  | Watch Swipe Down Gestures
+`watchGestureLeft`    | `boolean` | `true`  | Watch Swipe Left Gestures
+`watchGestureRight`   | `boolean` | `true`  | Watch Swipe Right Gestures
+`watchGestureForward` | `boolean` | `true`  | Watch Swipe Forward Gestures
+`watchGestureBack`    | `boolean` | `true`  | Watch Swipe Back Gestures
+`orientation`         | `string`  | `up`    | Orientation of Leap Motion Controller: `up` = glass facing ceiling, `forward` = glass facing wall
 
 NOTE:  The `orientation` automatically changes the up, down, forward & back to more intuitive.  In order to make this work correctly, make sure the Leap Motion logo on the back of the controller is facing the top of the device, otherwise you're going to have a hard time.
 
