@@ -62,17 +62,6 @@
 #leap-motion-indicator.leap_motion_swipe_back {
   animation: swipeBack 0.35s ease-in;
 }
-#leap-motion-indicator.leap_motion_gesture_clockwise {
-  border: 2px solid #FFF;
-  border-top-color: #000;
-  animation: spin 1s ease;
-}
-#leap-motion-indicator.leap_motion_gesture_counter_clockwise {
-  border: 2px solid #FFF;
-  border-top-color: #000;
-  animation: spin 1s ease;
-  animation-direction: reverse;
-}
 
 @keyframes ripple {
    0% {
@@ -172,11 +161,5 @@
   100% {
     transform: scale(2, 2);
     background-color: rgba(255, 255, 255, 0);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
   }
 }
